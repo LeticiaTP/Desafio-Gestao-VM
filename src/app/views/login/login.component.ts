@@ -28,5 +28,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class LoginComponent {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-  matcher = new MyErrorStateMatcher();
+  mensagemErroEmail = new MyErrorStateMatcher();
+
+  senhaFormControl = new FormControl('', [Validators.required]);
+  mensagemErroSenha = new MyErrorStateMatcher();
 }
