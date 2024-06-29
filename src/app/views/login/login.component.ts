@@ -10,6 +10,7 @@ import {
 import {ErrorStateMatcher} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { Router } from '@angular/router';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -40,6 +41,8 @@ export class LoginComponent {
   objetoFormCadastro: Cadastro = new Cadastro();
   objetoFormLogin: Login = new Login();
 
+  constructor(private router: Router){}
+
   cadastrar() {
     const localUser = localStorage.getItem('angular17users');
     if (localUser != null) {
@@ -52,6 +55,21 @@ export class LoginComponent {
       localStorage.setItem('angular17users', JSON.stringify(users))
     }
     alert('Cadastrado(a)!')
+  }
+
+  login() {
+    const localUsers = localStorage.getItem('angular17users');
+    if(localUsers != null) {
+      const users = JSON.parse(localUsers);
+
+      const existeUsuario = users.find((user: Cadastro) => user.email == this.objetoFormCadastro.email && user.senha == this.objetoFormCadastro.senha);
+      if(existeUsuario != undefined) {
+        localStorage.setItem('usuarioLogado', JSON.stringify(existeUsuario));
+        this.router.navigateByUrl('/home');
+      } else {
+        alert("No user found!")
+      }
+    }
   }
 }
 
