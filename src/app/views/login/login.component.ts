@@ -62,7 +62,7 @@ export class LoginComponent {
     if(localUsers != null) {
       const users = JSON.parse(localUsers);
 
-      const existeUsuario = users.find((user: Cadastro) => user.email == this.objetoFormCadastro.email && user.senha == this.objetoFormCadastro.senha);
+      const existeUsuario = users.find((user: Cadastro) => user.email == this.objetoFormLogin.email && user.senha == this.objetoFormLogin.senha);
       if(existeUsuario != undefined) {
         localStorage.setItem('usuarioLogado', JSON.stringify(existeUsuario));
         this.router.navigateByUrl('/home');
@@ -74,12 +74,10 @@ export class LoginComponent {
 }
 
 export class Cadastro {
-  usuario: string;
   email: string;
   senha: string;
 
   constructor() {
-    this.usuario = "";
     this.email = "";
     this.senha = "";
   }

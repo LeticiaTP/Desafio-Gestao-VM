@@ -1,7 +1,7 @@
 <main>
   <section class="saudacoes">
     <h1>VMonitora</h1>
-    <h2>Bem-vindo(a)! ;)</h2>
+    <h2>Bem-vindo(a)! <span aria-hidden="true">;)</span> </h2>
     <p>Faça login para continuar.</p>
   </section>
   
@@ -49,17 +49,6 @@
               }
               @if (emailFormControl.hasError('required')) {
                 <mat-error>Email é <strong>obrigatório</strong></mat-error>
-              }
-            </mat-form-field>
-  
-            <mat-form-field class="campos-formulario">
-              <mat-label>Usuário</mat-label>
-              <input matInput [formControl]="usuarioFormControl" [errorStateMatcher]="mensagemErroUsuario" name="usuario" [(ngModel)]="objetoFormCadastro.usuario">
-              @if (usuarioFormControl.hasError('usuario') && !usuarioFormControl.hasError('required')) {
-                <mat-error>Formato inválido</mat-error>
-              }
-              @if (usuarioFormControl.hasError('required')) {
-                <mat-error>Usuário é <strong>obrigatório</strong></mat-error>
               }
             </mat-form-field>
 
