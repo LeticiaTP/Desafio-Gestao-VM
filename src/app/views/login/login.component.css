@@ -25,6 +25,20 @@ main {
     margin: 5% 5%;
 }
 
+.pergunta {
+    align-self: center;
+}
+
+.link {
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    font-size: 15px;
+}
+.link:hover{
+    color: blue;
+}
+
 .botao-login {
     width: 30%;
     align-self: center;

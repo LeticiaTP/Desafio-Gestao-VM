@@ -30,7 +30,11 @@
               }
             </mat-form-field>
   
-            <h3>Ainda não possui conta? <button (click)="possuiConta = false">Cadastre-se</button>.</h3>
+            <div class="pergunta">
+              <h3>Ainda não possui conta? 
+              <button class="link" (click)="possuiConta = false">Cadastre-se</button>.</h3>
+            </div>
+            
             <input (click)="login()" class="botao-login" type="submit" value="Login">
         </form>
       </div>  
@@ -44,6 +48,7 @@
               <mat-label>Email</mat-label>
               <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="mensagemErroEmail"
                       placeholder="Ex. seuemail@provedor.com" name="email" [(ngModel)]="objetoFormCadastro.email">
+
               @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
                 <mat-error>Formato inválido</mat-error>
               }
@@ -54,13 +59,19 @@
 
             <mat-form-field class="campos-formulario">
               <mat-label>Senha</mat-label>
-              <input type="password" matInput [formControl]="senhaFormControl" [errorStateMatcher]="mensagemErroSenha" name="senha" [(ngModel)]="objetoFormCadastro.senha">
+              <input type="password" matInput [formControl]="senhaFormControl" [errorStateMatcher]="mensagemErroSenha" 
+                      name="senha" [(ngModel)]="objetoFormCadastro.senha">
+
               @if (emailFormControl.hasError('required')) {
                 <mat-error>Senha é <strong>obrigatória</strong></mat-error>
               }
             </mat-form-field>
-            
-            <h3>Já possui possui conta? <button (click)="possuiConta = true">Faça Login</button>.</h3>
+
+            <div class="pergunta">
+              <h3>Já possui possui conta? 
+              <button class="link" (click)="possuiConta = true">Faça Login</button>.</h3>
+            </div>
+
             <input class="botao-login" type="submit" value="Cadastrar" (click)="cadastrar()">
         </form>
       </div>
