@@ -43,7 +43,7 @@
             <mat-form-field class="campos-formulario">
               <mat-label>Email</mat-label>
               <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="mensagemErroEmail"
-                      placeholder="Ex. seuemail@provedor.com">
+                      placeholder="Ex. seuemail@provedor.com" name="email" [(ngModel)]="objetoFormCadastro.email">
               @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
                 <mat-error>Formato inválido</mat-error>
               }
@@ -54,7 +54,7 @@
   
             <mat-form-field class="campos-formulario">
               <mat-label>Usuário</mat-label>
-              <input matInput [formControl]="usuarioFormControl" [errorStateMatcher]="mensagemErroUsuario">
+              <input matInput [formControl]="usuarioFormControl" [errorStateMatcher]="mensagemErroUsuario" name="usuario" [(ngModel)]="objetoFormCadastro.usuario">
               @if (usuarioFormControl.hasError('usuario') && !usuarioFormControl.hasError('required')) {
                 <mat-error>Formato inválido</mat-error>
               }
@@ -65,14 +65,14 @@
 
             <mat-form-field class="campos-formulario">
               <mat-label>Senha</mat-label>
-              <input type="password" matInput [formControl]="senhaFormControl" [errorStateMatcher]="mensagemErroSenha">
+              <input type="password" matInput [formControl]="senhaFormControl" [errorStateMatcher]="mensagemErroSenha" name="senha" [(ngModel)]="objetoFormCadastro.senha">
               @if (emailFormControl.hasError('required')) {
                 <mat-error>Senha é <strong>obrigatória</strong></mat-error>
               }
             </mat-form-field>
             
             <h3>Já possui possui conta? <button (click)="possuiConta = true">Faça Login</button>.</h3>
-            <input class="botao-login" type="submit" value="Cadastrar">
+            <input class="botao-login" type="submit" value="Cadastrar" (click)="cadastrar()">
         </form>
       </div>
     }

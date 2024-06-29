@@ -37,12 +37,42 @@ export class LoginComponent {
   mensagemErroSenha = new MyErrorStateMatcher();
 
   possuiConta: boolean = true;
+  objetoFormCadastro: Cadastro = new Cadastro();
+  objetoFormLogin: Login = new Login();
 
-  objetoFormCadastro: any = {
-
+  cadastrar() {
+    const localUser = localStorage.getItem('angular17users');
+    if (localUser != null) {
+      const users = JSON.parse(localUser);
+      users.push(this.objetoFormCadastro);
+      localStorage.setItem('angular17users', JSON.stringify(users))
+    } else {
+      const users = [];
+      users.push(this.objetoFormCadastro);
+      localStorage.setItem('angular17users', JSON.stringify(users))
+    }
+    alert('Cadastrado(a)!')
   }
 }
 
 export class Cadastro {
+  usuario: string;
+  email: string;
+  senha: string;
 
+  constructor() {
+    this.usuario = "";
+    this.email = "";
+    this.senha = "";
+  }
+}
+
+export class Login {
+  email: string;
+  senha: string;
+
+  constructor() {
+    this.email = "";
+    this.senha = "";
+  }
 }
