@@ -2,9 +2,11 @@
     <button mat-icon-button class="example-icon" aria-label="Menu">
       <mat-icon aria-hidden="true">menu</mat-icon>
     </button>
-    <span>Gerenciador de VM</span>
+    <span>VMonitora</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon" aria-label="Logout">
+    {{usuarioLogado?.email}} |
+    <button mat-icon-button class="example-icon" aria-label="Logout" (click)="logoff()">
       <mat-icon aria-hidden="true">logout</mat-icon>
     </button>
+    
 </mat-toolbar>
