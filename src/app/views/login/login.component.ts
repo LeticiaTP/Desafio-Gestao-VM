@@ -68,7 +68,7 @@ export class LoginComponent {
         localStorage.setItem('usuarioLogado', JSON.stringify(existeUsuario));
         this.router.navigateByUrl('/home');
       } else {
-        alert("No user found!")
+        alert("Ops! Reveja se as informações estão corretas.")
       }
     }
   }
