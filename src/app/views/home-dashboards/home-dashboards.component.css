@@ -1,0 +1,11 @@
+.example-container {
+    position: absolute;
+    background: #eee;
+}
+
+.item {
+    margin: 20px 30px 0 20px;
+    justify-content: center;
+    display: flex;
+}
+

@@ -1,1 +1,19 @@
 <app-header></app-header>
+
+
+    <mat-sidenav-container class="example-container">
+        <mat-sidenav mode="side" opened><a class="item" mat-list-item href="/login">Teste</a></mat-sidenav>
+        <mat-sidenav-content>
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title> Bem-vindo(a) ao VMonitora! </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <p>Esta é uma aplicação para gerenciamento de VM's (Máquinas Virtuais). Você pode monitorar suas VM's pela página de lista, disponível no menu da esquerda.
+                    Na tela atual, você pode acompanhar as informações por dois gráficos.
+                  </p>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
