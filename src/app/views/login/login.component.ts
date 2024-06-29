@@ -32,4 +32,6 @@ export class LoginComponent {
 
   senhaFormControl = new FormControl('', [Validators.required]);
   mensagemErroSenha = new MyErrorStateMatcher();
+
+  possuiConta: boolean = true;
 }
