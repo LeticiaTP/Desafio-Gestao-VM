@@ -30,8 +30,19 @@ export class LoginComponent {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   mensagemErroEmail = new MyErrorStateMatcher();
 
+  usuarioFormControl = new FormControl('', [Validators.required]);
+  mensagemErroUsuario = new MyErrorStateMatcher();
+
   senhaFormControl = new FormControl('', [Validators.required]);
   mensagemErroSenha = new MyErrorStateMatcher();
 
   possuiConta: boolean = true;
+
+  objetoFormCadastro: any = {
+
+  }
+}
+
+export class Cadastro {
+
 }
