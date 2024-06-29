@@ -11,4 +11,12 @@ import { HeaderComponent } from '../../shared/components/header/header.component
 })
 export class HomeDashboardsComponent {
 
+  usuarioLogado: any;
+
+  constructor(){
+    const localUser = localStorage.getItem('usuarioLogado');
+    if(localUser != null) {
+      this.usuarioLogado = JSON.parse(localUser);
+    }
+  }
 }
