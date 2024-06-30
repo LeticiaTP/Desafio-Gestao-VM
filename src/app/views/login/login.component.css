@@ -79,3 +79,6 @@ h1 {
     font-size: 20px;
     padding: 5px;
 }
+.botao-login:hover{
+    background-color: #640802;
+}
