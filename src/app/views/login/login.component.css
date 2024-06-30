@@ -1,7 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-image: linear-gradient(to left, #da291c, #83170f);
+
+}
+
 main {
     display: flex;
     justify-content: space-between;
-    margin: 15% 10%;
+    padding: 10%;
+    font-family: "Asap", sans-serif;
+}
+
+h1 {
+    font-size: 80px;
+    font-family: "Asap", sans-serif;
+    color: white;
+}
+
+.bemvindo {
+    margin: 5% 0 ;
+    font-size: 35px;
+    font-family: "Asap", sans-serif;
+    color: white;
+}
+
+.cta {
+    font-size: 20px;
+    color: white;
 }
 
 .saudacoes {
@@ -18,8 +44,10 @@ main {
     flex-direction: column;
     width: 100%;
     height: 50%;
-    background: rgb(255, 199, 199);
-}
+    background: #ffe3e3;
+    border-radius: 10px;
+    font-family: "Asap", sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.616);}
 
 .campos-formulario {
     margin: 5% 5%;
@@ -36,11 +64,20 @@ main {
     font-size: 15px;
 }
 .link:hover{
-    color: blue;
+    color: rgb(1, 1, 219);
 }
 
 .botao-login {
     width: 30%;
     align-self: center;
     margin:5% 1%;
+    background-color:#8d0c03;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    padding: 5px;
+}
+.botao-login:hover{
+    background-color: #640802;
 }
